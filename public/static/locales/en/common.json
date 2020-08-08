@@ -1,0 +1,20 @@
+{
+  "change-locale": "Change locale",
+  "error-with-status": "A {{statusCode}} error occurred on server",
+  "error-without-status": "An error occurred on the server",
+  "index": {
+    "head_title": "Home"
+  },
+  "users": {
+    "head_title": "Users"
+  },
+  "users_no_ssr": {
+    "head_title": "Users - No SSR"
+  },
+  "header": {
+    "home_menu_item": "Home",
+    "users_menu_item": "Users",
+    "users_no_ssr_menu_item": "Users (No SSR)"
+  },
+  "footer": "Next Antd Graphql Starter"
+}
