@@ -22,13 +22,13 @@ Some dependencies are required globally
 First clone the repository
 
 ```bash
-git clone https://github.com/clement-faure/next-antd-graphql-starter.git
+git clone https://github.com/clement-faure/next-material-ui-graphql-starter.git
 ```
 
 Install dependencies
 
 ```bash
-cd next-antd-graphql-starter && yarn install
+cd next-material-ui-graphql-starter && yarn install
 ```
 
 Run it
