@@ -2,7 +2,7 @@
 
 Next Material-Ui GraphQL Starter is a simple environment for building modern JAMstack application.
 
-[https://next-antd-graphql-starter.vercel.app](https://next-antd-graphql-starter.vercel.app)
+[https://next-material-ui-graphql-starter.vercel.app/fr](https://next-material-ui-graphql-starter.vercel.app/fr)
 
 This starter is build on top of
 
