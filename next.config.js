@@ -24,7 +24,7 @@ const extendRuntimeConfig = (nextConfig = {}) => ({
   },
   publicRuntimeConfig: {
     // Will be available on both server and client
-    appName: 'NagStarter',
+    appName: 'NMuigStarter',
     graphqlUri: process.env.GRAPHQL_URI,
     localeSubpaths,
   },
