@@ -18,7 +18,7 @@ const Homepage = () => {
   return (
     <>
       <Head>
-        <title>{`${process.env.APP_NAME} - ${t('index.head_title')}`}</title>
+        <title>{`${t('app_name')} - ${t('index.head_title')}`}</title>
       </Head>
       <GlobalLayout title={t('index.head_title')}>
         <Button onClick={onLanguageChange}>{t('change-locale')}</Button>

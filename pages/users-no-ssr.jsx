@@ -11,9 +11,7 @@ import UsersContainer from '~/views/users/UsersContainer';
 const UsersNoSSRPage = ({ t }) => (
   <>
     <Head>
-      <title>
-        {`${process.env.APP_NAME} - ${t('users_no_ssr.head_title')}`}
-      </title>
+      <title>{`${t('app_name')} - ${t('users_no_ssr.head_title')}`}</title>
     </Head>
     <GlobalLayout title={t('users_no_ssr.head_title')}>
       <UsersContainer />
