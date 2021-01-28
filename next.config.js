@@ -1,11 +1,6 @@
 /* eslint-disable */
 const { nextI18NextRewrites } = require('next-i18next/rewrites');
 
-const localeSubpaths = {
-  en: 'en',
-  fr: 'fr',
-};
-
 const flowRight = require('lodash/fp/flowRight');
 
 if (process.env.ANALYZE === 'true') {
@@ -24,11 +19,21 @@ const extendRuntimeConfig = (nextConfig = {}) => ({
   },
   publicRuntimeConfig: {
     // Will be available on both server and client
-    appName: 'NMuigStarter',
-    graphqlUri: process.env.GRAPHQL_URI,
-    localeSubpaths,
   },
 });
+
+const extendEnv = (nextConfig = {}) => {
+  return {
+    ...nextConfig,
+    env: {
+      APP_VERSION: packageJSON.version,
+      APP_NAME: 'NMuigStarter',
+      I18N_LOCALE_SUB_PATHS: { en: 'en', fr: 'fr' },
+      GRAPHQL_URI: process.env.GRAPHQL_URI,
+      ...(nextConfig.env || {}),
+    },
+  };
+};
 
 const extendRewrites = (nextConfig = {}) => ({
   ...nextConfig,
