@@ -1,12 +1,10 @@
 /* eslint-disable */
 const { nextI18NextRewrites } = require('next-i18next/rewrites');
 
-const localeSubpaths = {
-  en: 'en',
-  fr: 'fr',
-};
-
 const flowRight = require('lodash/fp/flowRight');
+
+const packageJSON = require('./package.json');
+const { localeSubpaths } = require('./src/lib/i18n/config');
 
 if (process.env.ANALYZE === 'true') {
   console.log('Enabling Webpack bundle analyzer');
@@ -24,11 +22,20 @@ const extendRuntimeConfig = (nextConfig = {}) => ({
   },
   publicRuntimeConfig: {
     // Will be available on both server and client
-    appName: 'NMuigStarter',
-    graphqlUri: process.env.GRAPHQL_URI,
     localeSubpaths,
   },
 });
+
+const extendEnv = (nextConfig = {}) => {
+  return {
+    ...nextConfig,
+    env: {
+      APP_VERSION: packageJSON.version,
+      GRAPHQL_URI: process.env.GRAPHQL_URI,
+      ...(nextConfig.env || {}),
+    },
+  };
+};
 
 const extendRewrites = (nextConfig = {}) => ({
   ...nextConfig,
@@ -54,6 +61,7 @@ module.exports = (nextConfig = {}) => {
   return flowRight([
     extendWebpackConfig,
     extendRuntimeConfig,
+    extendEnv,
     extendRewrites,
     extendGlobalConfig,
   ])(nextConfig);

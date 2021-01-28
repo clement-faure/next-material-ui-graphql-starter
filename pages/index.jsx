@@ -1,15 +1,12 @@
 import React from 'react';
 
 import Head from 'next/head';
-import getConfig from 'next/config';
 
 import { Button } from '@material-ui/core';
 
 import { useTranslation } from '~/lib/i18n';
 
-const {
-  publicRuntimeConfig: { appName },
-} = getConfig();
+import GlobalLayout from '~/components/layout/GlobalLayout';
 
 const Homepage = () => {
   const { t, i18n } = useTranslation('common');
@@ -21,11 +18,11 @@ const Homepage = () => {
   return (
     <>
       <Head>
-        <title>{`${appName} - ${t('index.head_title')}`}</title>
+        <title>{`${t('app_name')} - ${t('index.head_title')}`}</title>
       </Head>
-      <div className="padding-50">
+      <GlobalLayout title={t('index.head_title')}>
         <Button onClick={onLanguageChange}>{t('change-locale')}</Button>
-      </div>
+      </GlobalLayout>
     </>
   );
 };

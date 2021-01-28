@@ -1,4 +1,5 @@
 {
+  "app_name": "NMuigStarter",
   "change-locale": "Changer locale",
   "error-with-status": "A {{statusCode}} error occurred on server",
   "error-without-status": "An error occurred on the server",
@@ -10,11 +11,6 @@
   },
   "users_no_ssr": {
     "head_title": "Utilisateurs - No SSR"
-  },
-  "header": {
-    "home_menu_item": "Accueil",
-    "users_menu_item": "Utilisateurs",
-    "users_no_ssr_menu_item": "Utilisateurs (No SSR)"
   },
   "footer": "Next Antd Graphql Starter"
 }

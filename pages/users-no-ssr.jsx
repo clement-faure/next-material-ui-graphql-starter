@@ -2,24 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Head from 'next/head';
-import getConfig from 'next/config';
 
 import { withTranslation } from '~/lib/i18n';
 
+import GlobalLayout from '~/components/layout/GlobalLayout';
 import UsersContainer from '~/views/users/UsersContainer';
-
-const {
-  publicRuntimeConfig: { appName },
-} = getConfig();
 
 const UsersNoSSRPage = ({ t }) => (
   <>
     <Head>
-      <title>{`${appName} - ${t('users_no_ssr.head_title')}`}</title>
+      <title>{`${t('app_name')} - ${t('users_no_ssr.head_title')}`}</title>
     </Head>
-    <div className="padding-50">
+    <GlobalLayout title={t('users_no_ssr.head_title')}>
       <UsersContainer />
-    </div>
+    </GlobalLayout>
   </>
 );
 
